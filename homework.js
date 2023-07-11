@@ -25,3 +25,60 @@ hamster.wheelRun()
 hamster.eatFood()
 console.log(hamster.getPrice())
 console.table(hamster)
+
+
+// Person ====================
+
+
+class Person{
+    constructor(name,age = 0,height = 0,weight= 0,mood = 0 ,hamsters = [],bankAccount=0){
+        this.name = name;
+        this.age = age;
+        this.height = height;
+        this.weight = weight;
+        this.mood = mood;
+        this.hamsters = hamsters;
+        this.bankAccount = bankAccount;
+    }
+    getName(){
+        return this.name
+    }
+    getAge(){
+        return this.age
+    }
+    getWeight(){
+        return this.weight
+    }
+    greet(){
+        console.log(`${this.name} is realy cool`)
+    }
+    eat(){
+        this.weight = this.weight + 1
+    }
+    exercise(){
+        this.weight =this.weight - 1
+    }
+    ageUp(){
+        this.age = this.age + 1
+        this.bankAccount = this.bankAccount + 10
+    }
+    buyHamster(ham){
+        this.hamsters.push(ham)
+        this.mood +=10
+        this.bankAccount=this.bankAccount-hamster.price
+
+    }
+}
+
+const person = new Person('Clarence')
+person.buyHamster(hamster)
+person.ageUp()
+person.exercise()
+person.eat()
+person.greet()
+console.log(person.getWeight())
+console.log(person.getAge())
+console.log(person.getName())
+console.table(person.hamsters)
+
+
