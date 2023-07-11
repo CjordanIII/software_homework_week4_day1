@@ -20,7 +20,8 @@ class Hamster{
 }
 
 
-const hamster = new Hamster('clarence')
+const hamster = new Hamster('clarence','jordan')
+const guss = new Hamster('guss','Timmy')
 hamster.wheelRun()
 hamster.eatFood()
 console.log(hamster.getPrice())
@@ -31,7 +32,7 @@ console.table(hamster)
 
 
 class Person{
-    constructor(name,age = 0,height = 0,weight= 0,mood = 0 ,hamsters = [],bankAccount=0){
+    constructor(name , age = 0,height = 0,weight= 0,mood = 0 , hamsters= [],bankAccount=0){
         this.name = name;
         this.age = age;
         this.height = height;
@@ -52,14 +53,14 @@ class Person{
     greet(){
         console.log(`${this.name} is realy cool`)
     }
-    eat(){
-        this.weight = this.weight + 1
+    eat(inc){
+        this.weight = this.weight + inc
     }
-    exercise(){
-        this.weight =this.weight - 1
+    exercise(inc){
+        this.weight =this.weight - inc
     }
-    ageUp(){
-        this.age = this.age + 1
+    ageUp(inc){
+        this.age = this.age + inc
         this.bankAccount = this.bankAccount + 10
     }
     buyHamster(ham){
@@ -79,6 +80,18 @@ person.greet()
 console.log(person.getWeight())
 console.log(person.getAge())
 console.log(person.getName())
-console.table(person.hamsters)
+console.log(person.hamsters)
+
+const timmy = new Person('Timmy', 5)
+timmy.buyHamster(guss)
+console.table(timmy)
+timmy.eat(5)
+timmy.exercise(5)
+timmy.ageUp(9)
+timmy.ageUp(15)
+timmy.eat(2)
+timmy.exercise(2)
+console.table(timmy)
+
 
 
