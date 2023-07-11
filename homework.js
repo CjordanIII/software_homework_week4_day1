@@ -95,3 +95,26 @@ console.table(timmy)
 
 
 
+console.log('==============================================')
+
+
+class Dinner{
+
+    constructor(appetizer, entree,dessert){
+        this.appetizer = appetizer
+        this.entree = entree
+        this.dessert = dessert
+    }
+
+}
+
+class Chef{
+
+    getDinner(appetizer,entree,dessert){
+        return new Dinner(appetizer,entree,dessert)
+    }
+
+}
+
+const chefFactory = new Chef()
+console.log(chefFactory.getDinner('food1','food2','food3'))
